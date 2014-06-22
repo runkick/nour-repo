@@ -10,6 +10,7 @@ public interface CoupeDAO {
 	public  Pronostiqueur find(int id_pronostiqueur) ;
 	public List<Pronostiqueur> chargerPronostiqueur();
 	public Pronostiqueur indentification(Pronostiqueur pronostiqueur);
+	public List<Pronostiqueur> loadPronostiqueurs();
 	public List<Groupe> loadGroupes();
 //public createPronostique(String pronostique, int idPronostiqueur);
 //	public updat 

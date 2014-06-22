@@ -41,5 +41,6 @@
 
 	<bean
 		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+		<bean id="coupeService" class="com.kamel.brasil.service.CoupeServiceImpl" />
 	
 </beans>

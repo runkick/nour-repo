@@ -100,7 +100,9 @@ public class HomeController {
 			@ModelAttribute Pronostiqueur pronostiqueur) {
 		System.out.println("indetif pronos" + pronostiqueur.getPrenom());
 		ModelAndView mav = new ModelAndView();
-
+		
+		List<Pronostiqueur> allPlayers = coupeDAO.loadPronostiqueurs();
+		List<Groupe> allGroupes = coupeDAO.loadGroupes();
 		Pronostiqueur playeur = coupeDAO.indentification(pronostiqueur);
 		if (playeur != null) {
 

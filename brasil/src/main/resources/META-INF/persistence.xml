@@ -9,16 +9,10 @@
 		
 		<class>com.kamel.brasil.model.Equipe</class>
 		<class>com.kamel.brasil.model.Groupe</class>
-		<class>com.kamel.brasil.model.Joueur</class>
 		<class>com.kamel.brasil.model.Match</class>
-		<class>com.kamel.brasil.model.Oppose</class>
-		<class>com.kamel.brasil.model.Pays</class>
-		<class>com.kamel.brasil.model.Phase</class>
 		<class>com.kamel.brasil.model.Pronostique</class>
 		<class>com.kamel.brasil.model.Pronostiqueur</class>
-		<class>com.kamel.brasil.model.Stade</class>
-		<class>com.kamel.brasil.model.Ville</class>
-		
+		<class>com.kamel.brasil.model.Person</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.show_sql" value="true" />
