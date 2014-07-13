@@ -18,11 +18,15 @@
 
 	<c:forEach items="${groupes}" var="groupe" varStatus="groupeLoop">
 		<div class="groupe">
-			<p>Groupe ${groupe.id}</p>
-			<c:forEach items="${groupe.matchs}" var="match" varStatus="matchLoop">
-
-				<p>${match.equipe1.nom}- ${match.equipe2.nom}</p>
-			</c:forEach>
+			<p class="groupe-header">Groupe ${groupe.id}</p>
+			<table class="dataTable">
+				<c:forEach items="${groupe.matchs}" var="match"
+					varStatus="matchLoop">
+					<tr>
+						<td><p>${match.equipe1.nom}-${match.equipe2.nom}</p></td>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
 	</c:forEach>
 
