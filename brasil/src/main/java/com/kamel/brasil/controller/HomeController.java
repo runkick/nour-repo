@@ -1,6 +1,7 @@
 package com.kamel.brasil.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kamel.brasil.bean.PronosBean;
 import com.kamel.brasil.dao.CoupeDAO;
 import com.kamel.brasil.model.Groupe;
+import com.kamel.brasil.model.Groupes;
+import com.kamel.brasil.model.Matchs;
 import com.kamel.brasil.model.Pronostiqueur;
-import com.kamel.brasil.service.CoupeServiceImpl;
 import com.kamel.brasil.service.ICoupeService;
 
 /**
@@ -89,7 +91,18 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("identification");
 		Pronostiqueur pronostiqueur = new Pronostiqueur();
-		
+
+//		List<Groupes> groupes = coupeDAO.chargerGroupes();
+//		for (Groupes g : groupes) {
+//			System.out.println("groupe : " + g.getId());
+//			Set<Matchs> matchs = g.getMatchs();
+//
+//			for (Matchs m : matchs) {
+//				System.out.println("groupe_match : " + g.getId() + "-"
+//						+ m.getId() + " score : " + m.getScore());
+//			}
+//		}
+
 		mav.addObject("pronostiqueur", pronostiqueur);
 		return mav;
 
@@ -101,9 +114,7 @@ public class HomeController {
 		System.out.println("indetif pronos" + pronostiqueur.getPrenom());
 		ModelAndView mav = new ModelAndView();
 		
-		List<Pronostiqueur> allPlayers = coupeDAO.loadPronostiqueurs();
-		List<Groupe> allGroupes = coupeDAO.loadGroupes();
-		Pronostiqueur playeur = coupeDAO.indentification(pronostiqueur);
+			Pronostiqueur playeur = coupeDAO.indentification(pronostiqueur);
 		if (playeur != null) {
 
 			mav.addObject("playeur", playeur);
@@ -122,9 +133,12 @@ public class HomeController {
 		public ModelAndView pronos(){
 			ModelAndView mav= new ModelAndView();
 			mav.setViewName("pronos");
+			//Chargement des groupes avec leurs matchs associés 
+			List<Groupes> groupes = coupeService.chargerGroupes();
+			mav.addObject("groupes" , groupes);
+				
 			
 			mav.addObject("pronosBean" , new PronosBean());
-			mav.setViewName("pronos");
 			return mav;
 		}
 	
@@ -136,8 +150,6 @@ public class HomeController {
 		ModelAndView mav= new ModelAndView();
 		mav.setViewName("phaseFinale");
 		String pronos = pronosBean.construirePronos();
-		List<Groupe> groupe = coupeService.loadGroupe();
-		
 		return mav;
 	}
 	

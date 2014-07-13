@@ -6,7 +6,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"	href="../css/screen.css" 	type="text/css" />
+<link rel="stylesheet" href="../css/screen.css" type="text/css" />
 
 <title>Insert title here</title>
 </head>
@@ -14,8 +14,20 @@
 
 
 
-<h3> Bonjour ${playeur.nom}</h3>
-<span>Groupe A</span>
+	<h3>Bonjour ${playeur.nom}</h3>
+
+	<c:forEach items="${groupes}" var="groupe" varStatus="groupeLoop">
+		<div class="groupe">
+			<p>Groupe ${groupe.id}</p>
+			<c:forEach items="${groupe.matchs}" var="match" varStatus="matchLoop">
+
+				<p>${match.equipe1.nom}- ${match.equipe2.nom}</p>
+			</c:forEach>
+		</div>
+	</c:forEach>
+
+
+	<!--<span>Groupe A</span>
 	
 	
 	
@@ -24,7 +36,7 @@
 
 
 
-			<form:form  style="padding:8px" method="POST" commandName="pronosBean" action="pronos">
+			<form:form  style="padding:8px" method="POST" commandName="pronosBean" >
 				<tr class="match 1">
 					<td class="eq1">Bresil</td>
 					<td class="drap1">
@@ -48,7 +60,7 @@
 			</form:form>
 
 
-
+-->
 
 
 </body>

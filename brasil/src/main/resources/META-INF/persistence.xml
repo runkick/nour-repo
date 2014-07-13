@@ -13,6 +13,9 @@
 		<class>com.kamel.brasil.model.Pronostique</class>
 		<class>com.kamel.brasil.model.Pronostiqueur</class>
 		<class>com.kamel.brasil.model.Person</class>
+		<class>com.kamel.brasil.model.Groupes</class>
+		<class>com.kamel.brasil.model.Matchs</class>
+		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.show_sql" value="true" />

@@ -140,3 +140,9 @@ ident {
 .property {
 	margin-bottom: 12px;
 }
+.groupe{
+	float:left;
+	width : 300px;
+	background-color: green;
+	margin: 15px;
+}

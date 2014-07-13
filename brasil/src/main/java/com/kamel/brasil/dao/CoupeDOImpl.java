@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import com.kamel.brasil.model.Groupe;
+import com.kamel.brasil.model.Groupes;
 import com.kamel.brasil.model.Pronostiqueur;
 
 @Repository
@@ -58,24 +59,20 @@ public class CoupeDOImpl implements CoupeDAO {
 
 	}
 
-	@Transactional
-	public List<Groupe> loadGroupes() {
+	public List<Pronostiqueur> loadPronostiqueurs() {
 
-		Query q = em.createQuery("select g from Groupe g ", Groupe.class);
-		List<Groupe> result = q.getResultList();
-
-		return result;
-	}
-	
-	
-	public List<Pronostiqueur> loadPronostiqueurs(){
-		
-		Query q = em.createQuery("select p from Pronostiqueur p", Pronostiqueur.class);
+		Query q = em.createQuery("select p from Pronostiqueur p",
+				Pronostiqueur.class);
 		List<Pronostiqueur> result = q.getResultList();
 
 		return result;
-		
-		
-		
+
+	}
+
+	public List<Groupes> chargerGroupes() {
+		Query q = em.createQuery("select g from Groupes g ", Groupes.class);
+		List<Groupes> result = q.getResultList();
+
+		return result;
 	}
 }

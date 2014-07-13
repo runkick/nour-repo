@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kamel.brasil.dao.CoupeDAO;
-import com.kamel.brasil.model.Groupe;
+import com.kamel.brasil.model.Groupes;
 
 @Service("coupeService")
 @Transactional
@@ -15,9 +15,10 @@ public class CoupeServiceImpl implements ICoupeService {
 	@Autowired
 	private CoupeDAO coupeDAO;
 
-	@Transactional
-	public List<Groupe> loadGroupe() {
-		return coupeDAO.loadGroupes();
+	public List<Groupes> chargerGroupes() {
+		// TODO Auto-generated method stub
+		return coupeDAO.chargerGroupes();
 	}
 
+	
 }

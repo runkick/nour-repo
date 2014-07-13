@@ -24,7 +24,7 @@ public class Match {
 //	@Column(name = "id_equipe1")
 //	private int id_equipe1;
 //
-//	@Column(name = "id_equipe2")
+//	@Column(name = "id_equipe2")r
 //	private int id_equipe2;
 //
 //	@Column(name = "id_pronostique")
