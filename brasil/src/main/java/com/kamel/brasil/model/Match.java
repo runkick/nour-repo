@@ -20,6 +20,7 @@ public class Match {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_match")
 	private int idMatch;
+	
 
 //	@Column(name = "id_equipe1")
 //	private int id_equipe1;

@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="pronostique")
@@ -17,6 +18,14 @@ private int id_pronostique;
 
 @Column (name="pronos")
 private String pronos;
+
+@Transient
+private String pronos1;
+
+@Transient
+private String pronos2;
+
+
 
 
 
@@ -38,10 +47,22 @@ public void setId_pronostique(int id_pronostique) {
 	this.id_pronostique = id_pronostique;
 }
 public String getPronos() {
-	return pronos;
+	return pronos1 + "-"  + pronos2;
 }
 public void setPronos(String pronos) {
 	this.pronos = pronos;
+}
+public String getPronos1() {
+	return pronos1;
+}
+public void setPronos1(String pronos1) {
+	this.pronos1 = pronos1;
+}
+public String getPronos2() {
+	return pronos2;
+}
+public void setPronos2(String pronos2) {
+	this.pronos2 = pronos2;
 }
 
  

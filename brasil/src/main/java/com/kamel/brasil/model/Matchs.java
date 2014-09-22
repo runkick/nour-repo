@@ -1,11 +1,14 @@
 package com.kamel.brasil.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,6 +34,11 @@ public class Matchs implements Serializable {
 	@OneToOne
 	@JoinColumn(name="id_equipe2")
 	private Equipe equipe2;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_match") 
+	private Set <Pronostique> pronostique;
+
 
 	public int getId() {
 		return id;
